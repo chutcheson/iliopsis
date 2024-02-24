@@ -19,6 +19,8 @@ def critique(images):
 
     Also feel free to pick out specific themes from the artworks (e.g. "japanese"), subject matter (e.g. "math") and items (e.g. "lotus flower").
 
+    Name specific things from the artworks.
+
     Artworks: {images}
 
     Return your response in JSON following this schema:
