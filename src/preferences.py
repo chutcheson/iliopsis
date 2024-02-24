@@ -50,6 +50,10 @@ class UserPreferences:
 
         self.ready.clear()
 
+    def print_waiting_images(self):
+        for uuid, image_result in self.waiting.items():
+            print(f"Image {uuid}: {image_result.path}")
+
     def has_waiting_images(self):
         return len(self.waiting) > 0
 

@@ -15,6 +15,8 @@ def critique(images):
 
     If there are no artworks that people liked, you should just describe `negative_qualities` of the artworks.
 
+    Feel free to be very specific with respect to the images.
+
     Artworks: {images}
 
     Return your response in JSON following this schema:
@@ -47,15 +49,10 @@ def critique(images):
 
     {{
       "positive_qualities": [
-        "vibrant color usage",
-        "innovative composition",
-        "emotional depth",
-        "Japanese motifs"
+        ...
       ],
       "negative_qualities": [
-        "lack of clarity in the theme",
-        "overly complex for general appreciation",
-        "generic looking"
+        ...
       ]
     }}
     """
@@ -97,15 +94,10 @@ def critique(images):
 
         {{
           "positive_qualities": [
-            "vibrant color usage",
-            "innovative composition",
-            "emotional depth",
-            "Japanese motifs"
+            ...
           ],
           "negative_qualities": [
-            "lack of clarity in the theme",
-            "overly complex for general appreciation",
-            "generic looking"
+            ...
           ]
         }}
         """
