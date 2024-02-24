@@ -40,8 +40,7 @@ class UserPreferences:
         ready_images = [irs for uuid, irs in self.ready.items()]
         for i in range(0, len(ready_images), batch_size):
             irs_batch = ready_images[i:i+batch_size]
-            positives, negatives = critique(irs_batch)
-            print(positives, negatives)
+            positives, negatives = critique([f"liked_artwork:{irs.success}, artwork:{irs.image_result.image}" for irs in irs_batch])
             for positive in positives:
                 self.db.insert_positive_quality(positive)
             for negative in negatives:
