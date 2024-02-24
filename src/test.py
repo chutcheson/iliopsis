@@ -32,7 +32,10 @@ if __name__ == "__main__":
             preferences.print_waiting_images()
             preferences.process_waiting_images()
 
-            print(db.fetch_random_qualities())
+            positive, negative = db.fetch_random_qualities()
+
+            print(f'Positive: {positive}')
+            print(f'Negative: {negative}')
 
     except Exception as e:
 
