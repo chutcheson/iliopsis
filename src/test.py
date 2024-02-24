@@ -7,10 +7,12 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Process some arguments.')
     parser.add_argument('--prompt', type=str, help='A prompt for the script')
+    parser.add_argument('--persona', type=str, help='A persona for the script')
     parser.add_argument('--user', type=str, help='A database for storing preferences')
     args = parser.parse_args()
 
     prompt = args.prompt
+    persona = args.persona
     user = args.user
 
     try:
@@ -20,7 +22,7 @@ if __name__ == "__main__":
         db.initialize_tables()
         db.populate_tables()
 
-        preferences = UserPreferences(db)
+        preferences = UserPreferences(db, persona)
         preferences.fetch_and_process_prompt()
         preferences.process_waiting_images()
 
